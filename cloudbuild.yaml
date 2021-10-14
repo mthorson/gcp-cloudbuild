@@ -8,7 +8,7 @@ steps:
 - name: python
   id: "Run Unit Testing"
   entrypoint: python
-  args: [ "pyexample.py" ]
-
+  #  args: [ "pyexample.py" ]
+  args: ["-m", "pip", "install", "pytest"]
 
 
