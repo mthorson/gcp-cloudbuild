@@ -6,14 +6,9 @@
 steps:
 
 - name: python
-  id: "Step1"
-  entrypoint: pip
-  args: ["install", "-r", "requirements.txt", "--user"]
-
-- name: python
-  id: "Step2"
+  id: "Run Unit Testing"
   entrypoint: python
-  args: ["-m", "pytest", "pyexample.py"] 
-  waitFor: ["Step1"]
+  args: [ "pyexample.py" ]
+
 
 
