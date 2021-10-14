@@ -1,8 +1,21 @@
+#steps:
+#- name: 'docker'
+#  args: [ 'build', '-t', 'gcr.io/$PROJECT_ID/helloworld-image', '.' ]
+
+
+
+
 steps:
-- name: 'docker'
-  args: [ 'build', '-t', 'gcr.io/$PROJECT_ID/helloworld-image', '.' ]
-
+- name: python
+  args:
+    - pip
+    - install
+    - pytest
+- name: python
+  args:
+    - pytest
+    - '-s'
+    - GCP/Templates/Functions/FunctionTemplatePython3.9
 images:
-- 'gcr.io/$PROJECT_ID/helloworld-image'
+- 'gcr.io/$PROJECT_ID/python-test-image'
 
-tags: ['gcp-cloud-build-sample-build']
