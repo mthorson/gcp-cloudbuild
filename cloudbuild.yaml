@@ -6,13 +6,15 @@
 steps:
 
 - name: python
+  id: "Step1"
   entrypoint: pip
   args: ["install", "-r", "requirements.txt", "--user"]
 
 - name: python
+  id: "Step2"
   entrypoint: python
-  args: ["-m", "pytest", "pyexample.py"] 
-
+  args: ["--version"] 
+  waitFor: ["Step1"]
 
 images:
 - 'gcr.io/$PROJECT_ID/python-test-image'
