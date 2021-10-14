@@ -13,7 +13,7 @@ steps:
 - name: python
   id: "Step2"
   entrypoint: python
-  args: ["--version"] 
+  args: ["-m", "pytest", "pyexample.py"] 
   waitFor: ["Step1"]
 
 
