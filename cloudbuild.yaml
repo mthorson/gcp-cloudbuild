@@ -7,15 +7,9 @@
 
 steps:
 - name: python
-  args:
-    - pip
-    - install
-    - pytest
-- name: python
-  args:
-    - pytest
-    - '-s'
-    - GCP/Templates/Functions/FunctionTemplatePython3.9
+  entrypoint: python
+  args: ["-m", "pytest", "pyexample.py" ]
+
 images:
 - 'gcr.io/$PROJECT_ID/python-test-image'
 
