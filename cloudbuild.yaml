@@ -16,6 +16,4 @@ steps:
   args: ["--version"] 
   waitFor: ["Step1"]
 
-images:
-- 'gcr.io/$PROJECT_ID/python-test-image'
 
