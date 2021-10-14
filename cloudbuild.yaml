@@ -6,9 +6,13 @@
 steps:
 
 - name: python
-  id: "Run Unit Testing"
-  entrypoint: python
-  #  args: [ "pyexample.py" ]
-  args: ["-m", "pip", "install", "pytest"]
+  id: "Will it blend?"
+  entrypoint: "bash"
+  args:
+  - '-c' # pass what follows as a command to bash
+  - |
+    python -m pip install pytest
+    pytest -s pyexample.py
+
 
 
