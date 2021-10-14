@@ -3,12 +3,18 @@
 #  args: [ 'build', '-t', 'gcr.io/$PROJECT_ID/helloworld-image', '.' ]
 
 
-
-
 steps:
+  # Install dependencies
+  - name: python
+    entrypoint: pip
+    args: ["install", "-r", "requirements.txt", "--user"]
+
+# Run unit tests
 - name: python
   entrypoint: python
-  args: ["-m", "pytest", "pyexample.py" ]
+  args: ["-m", "pytest", "pyexample.py"] 
+
+
 
 images:
 - 'gcr.io/$PROJECT_ID/python-test-image'
